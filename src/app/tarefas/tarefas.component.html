@@ -1,0 +1,31 @@
+<div class="row">
+    <!-- <div class="col-md-6">
+      <input type="checkbox" id="ckExibir" [(ngModel)]="">
+      <label for="ckExibir">Exibir Tabela</label>
+      <div class="col-md-6">
+        <input type="text" class="form-control" [(ngModel)]="nome">
+      </div>
+    </div> -->
+    <div class="col-12">
+      <!-- @if (tarefa) { -->
+      <table class="table table-bordered table-striped">
+        <!--*ngIf="exibirTabela" MODELO ANTIGO-->
+        <thead>
+          <tr>
+            <th scope="col">Descricao</th>
+            <th scope="col">Concluido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarefa of tarefas">
+            <th [ngStyle]="{'background-color': tarefa.concluido == concluido?'green': 'red'}"  scope="row">{{tarefa.descricao}}</th>
+            <input type="checkbox" id="ckConcluir" [(ngModel)]="tarefa.concluido"> 
+            <label for="ckConcluir"></label>
+            
+          </tr>
+        </tbody>
+      </table>
+      <!-- } -->
+  
+    </div>
+  </div>
